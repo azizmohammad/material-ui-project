@@ -1,19 +1,50 @@
 import React from 'react'
 import { Accordion, AccordionDetails, AccordionSummary, Typography } from '@mui/material'
 import ExpandMoreIcon from '@mui/icons-material/ExpandMore';
+import AddIcon from '@mui/icons-material/Add';
+import RemoveIcon from '@mui/icons-material/Remove';
 
-const CreativeAccordion = () => {
+const CostumExpandedIcon = () => {
+    return (
+        <div>
+            <div className='expandedPlus'>
+                <AddIcon />
+            </div>
+
+            <div className='expandedRemove'>
+                <RemoveIcon />
+            </div>
+        </div>
+    )
+}
+
+const CreativeAccordion = ({ title, driscruption }) => {
     return (
         <div>
             <Accordion sx={{
                 boxShadow: 1,
                 border: '1px solid #e5eaf2',
-                mb: 10,
+                // mb: 2,
                 p: 2,
-                borderRadius: 2
+                borderRadius: 2,
+                '& .Mui-expanded': {
+                    '& .expandedPlus': {
+                        display: 'none'
+                    },
+                    '& .expandedRemove': {
+                        display: 'block',
+                        '& svg': {
+                            color: '#7AB259'
+                        }
+                    },
+                }
             }}>
                 <AccordionSummary
+
                     sx={{
+                        '& .expandedRemove': {
+                            display: 'none'
+                        },
                         '& p': {
                             color: '#111430',
                             fontWeight: 'bold',
@@ -21,21 +52,21 @@ const CreativeAccordion = () => {
                         '& .Mui-expanded': {
                             '& p': {
                                 color: '#7AB259',
+                                display: 'block'
                             },
                         }
                     }}
-                    expandIcon={<ExpandMoreIcon />}
+                    expandIcon={<CostumExpandedIcon />}
                     aria-controls="panel1a-content"
                     id="panel1a-header"
                 >
-                    <Typography>Web Design</Typography>
+                    <Typography>{title}</Typography>
                 </AccordionSummary>
                 <AccordionDetails>
                     <Typography sx={{
                         color: '#5a7184'
                     }}>
-                        Lorem ipsum dolor sit amet, consectetur adipiscing elit. Suspendisse
-                        malesuada lacus ex, sit amet blandit leo lobortis eget.
+                        {driscruption}
                     </Typography>
                 </AccordionDetails>
             </Accordion>

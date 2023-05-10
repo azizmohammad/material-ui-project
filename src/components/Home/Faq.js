@@ -5,10 +5,22 @@ import CreativeAccordion from '../CreativeAccordion/CreativeAccordion'
 
 const Faq = () => {
     return (
-        <Box>
+        <Box sx={{
+            mb: 8
+        }}>
             <SectionTitle title='Frequently Asked' colored='question' />
 
-            <CreativeAccordion />
+            <Box sx={{
+                display: 'flex',
+                flexDirection: 'column',
+                gap: 3
+            }}>
+
+                <CreativeAccordion title='Front-end Developer' driscruption='lorem Lizards are group of squamate reptiles, with over species, all except Antarct' />
+                <CreativeAccordion title='Front-end Developer' driscruption='lorem Lizards are group of squamate reptiles, with over species, all except Antarct' />
+                <CreativeAccordion title='Front-end Developer' driscruption='lorem Lizards are group of squamate reptiles, with over species, all except Antarct' />
+
+            </Box>
         </Box>
     )
 }
