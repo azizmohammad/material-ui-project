@@ -1,8 +1,10 @@
 import { ArrowBackIos } from '@mui/icons-material';
-import { Box, IconButton, Tab, Tabs, Typography } from '@mui/material'
+import { Box, Grid, IconButton, Tab, Tabs, Typography } from '@mui/material'
 import React from 'react'
 import ArrowBackIcon from '@mui/icons-material/ArrowBack';
 import ArrowForwardIcon from '@mui/icons-material/ArrowForward';
+import CreativeCart from './CreativeCart';
+import { cardData } from './cardData';
 
 function OurWorks() {
 
@@ -76,9 +78,18 @@ function OurWorks() {
             </Box>
 
             {/* card section */}
-            <Box>
+            <>
+                <Grid container spacing={2}>
+                    {
+                        cardData[value].map(image => (
 
-            </Box>
+                            <Grid item xs={12} sm={6} md={4} >
+                                <CreativeCart image={image} />
+                            </Grid>
+                        ))
+                    }
+                </Grid>
+            </>
 
         </Box >
     )
