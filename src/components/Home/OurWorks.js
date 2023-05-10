@@ -16,7 +16,7 @@ function OurWorks() {
 
 
     return (
-        <Box sx={{ mb: 20 }}>
+        <Box sx={{ py: 5 }}>
             {/* heading section */}
             <Box sx={{
                 display: 'flex',

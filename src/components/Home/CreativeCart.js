@@ -4,7 +4,7 @@ import AddIcon from '@mui/icons-material/Add';
 
 function CreativeCart({ image }) {
     return (
-        <Box>
+        <Box >
 
             <Card sx={{ maxWidth: 345, p: 2, mt: 4, borderRadius: '10px', boxShadow: 3 }}
 
@@ -21,10 +21,7 @@ function CreativeCart({ image }) {
                     '&:last-child': {
                         pb: 0
                     },
-                    '& .css-mhc70k-MuiGrid-root': {
-                        pl: 0,
-                        pt: 0
-                    },
+
                     display: 'flex',
                     justifyContent: 'space-between',
                     alignItems: 'center',
